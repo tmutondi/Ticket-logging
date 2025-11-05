@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFlow Solutions – IT Help Desk Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #4a4a8c;
+        }
+        h1 {
+            border-bottom: 2px solid #4a4a8c;
+            padding-bottom: 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #aaa;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4a4a8c;
+            color: white;
+        }
+        .flowchart {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #aaa;
+            text-align: center;
+        }
+        .playbook {
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #aaa;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>TechFlow Solutions – IT Help Desk Project</h1>
+
+    <!-- Ticket Classification Matrix -->
+    <section>
+        <h2>1. Ticket Classification Matrix</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Critical</th>
+                    <th>High</th>
+                    <th>Medium</th>
+                    <th>Low</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Login Issues</td>
+                    <td>System-wide login outage</td>
+                    <td>User locked out of account</td>
+                    <td>2FA not syncing</td>
+                    <td>Forgotten password reset</td>
+                </tr>
+                <tr>
+                    <td>Permissions</td>
+                    <td>Admin access blocked</td>
+                    <td>Wrong role blocking features</td>
+                    <td>Delay in role update</td>
+                    <td>Request for extra role</td>
+                </tr>
+                <tr>
+                    <td>Hardware</td>
+                    <td>Server crash</td>
+                    <td>Laptop won’t boot</td>
+                    <td>Slow performance</td>
+                    <td>Keyboard missing key</td>
+                </tr>
+                <tr>
+                    <td>Software</td>
+                    <td>CRM crash on load</td>
+                    <td>Payment module fails</td>
+                    <td>Bug in report</td>
+                    <td>UI misalignment</td>
+                </tr>
+                <tr>
+                    <td>Connectivity</td>
+                    <td>VPN down company-wide</td>
+                    <td>Office Wi-Fi outage</td>
+                    <td>Intermittent lag</td>
+                    <td>Slow connection on one device</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Sample Ticket Log -->
+    <section>
+        <h2>2. Sample Ticket Log (50 Dummy Tickets)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ticket ID</th>
+                    <th>Description</th>
+                    <th>Severity</th>
+                    <th>Assigned Tier</th>
+                    <th>Status</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 50 dummy tickets with realistic notes -->
+                <script>
+                    const tbody = document.currentScript.parentNode;
+                    const categories = ['Login Issue', 'Permissions', 'Hardware', 'Software', 'Connectivity'];
+                    const severities = ['Critical', 'High', 'Medium', 'Low'];
+                    const tiers = ['Tier 1', 'Tier 2', 'Tier 3'];
+                    const statuses = ['New', 'Open', 'Pending', 'Resolved', 'Closed'];
+                    const notesSamples = [
+                        'User contacted; reset password and verified access.',
+                        'Escalated to Tier 2 for further troubleshooting.',
+                        'Hardware replacement scheduled.',
+                        'Issue resolved; verified by user.',
+                        'Monitoring connection for stability.',
+                        'Assigned to engineer for bug investigation.',
+                        'Temporary workaround applied.',
+                        'User retrained on feature usage.',
+                        'Pending software patch release.',
+                        'Follow-up scheduled with user.'
+                    ];
+                    for (let i=1; i<=50; i++) {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>TCKT-${1000 + i}</td>
+                            <td>${categories[i % categories.length]} example issue</td>
+                            <td>${severities[i % severities.length]}</td>
+                            <td>${tiers[i % tiers.length]}</td>
+                            <td>${statuses[i % statuses.length]}</td>
+                            <td>${notesSamples[i % notesSamples.length]}</td>
+                        `;
+                        tbody.appendChild(row);
+                    }
+                </script>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Ticket Intake Workflow -->
+    <section>
+        <h2>3. Ticket Intake Workflow</h2>
+        <div class="flowchart">
+            <img src="intake_flowchart.png" alt="Ticket Intake Flowchart" style="max-width:100%; height:auto; border:1px solid #aaa; padding:5px;">
+        </div>
+    </section>
+
+    <!-- Support Playbook -->
+    <section>
+        <h2>4. Support Playbook (Summary)</h2>
+        <div class="playbook">
+            <h3>Purpose & Scope</h3>
+            <p>Defines how TechFlow handles support tickets in Freshdesk. Ensures consistent logging, categorization, escalation, and resolution for employees and beta customers.</p>
+
+            <h3>Ticket Handling Rules</h3>
+            <ul>
+                <li>Log all tickets in Freshdesk.</li>
+                <li>Acknowledge tickets immediately.</li>
+                <li>Assign correct category and severity.</li>
+                <li>Update status regularly.</li>
+                <li>Communicate progress and resolutions.</li>
+            </ul>
+
+            <h3>Severity & SLA</h3>
+            <ul>
+                <li>Critical: Response 15 min, resolve &lt;4 hrs</li>
+                <li>High: Response 1 hr, resolve &lt;8 hrs</li>
+                <li>Medium: Response 4 hrs, resolve &lt;24 hrs</li>
+                <li>Low: Response 1 day, resolve &lt;3 days</li>
+            </ul>
+
+            <h3>Escalation Paths</h3>
+            <ul>
+                <li>Tier 1: Frontline fixes, low/medium tickets</li>
+                <li>Tier 2: Specialist/engineer, high tickets</li>
+                <li>Tier 3: DevOps/Product team, critical tickets</li>
+            </ul>
+
+            <h3>Communication Templates</h3>
+            <ul>
+                <li>Acknowledgement, In Progress, Resolution, Closure – automated via Freshdesk</li>
+            </ul>
+
+            <h3>Best Practices</h3>
+            <ul>
+                <li>Double-check severity before assigning SLA.</li>
+                <li>Keep fields updated (status, notes, assignee).</li>
+                <li>Encourage portal usage for visibility.</li>
+                <li>Document resolutions in the knowledge base.</li>
+            </ul>
+        </div>
+    </section>
+
+</body>
+</html>
